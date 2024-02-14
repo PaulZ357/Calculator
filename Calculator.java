@@ -4,15 +4,15 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Enter first input: ");
-        int input1 = keyboard.nextInt();
+        double input1 = keyboard.nextDouble();
         System.out.print("Enter second input: ");
-        int input2 = keyboard.nextInt();
+        double input2 = keyboard.nextDouble();
 
         keyboard.nextLine(); // i think this is unnecessary, but this is the only way I can get nextLine to work
 
         System.out.print("Do you want to add, subtract, multiply, or divide? ");
         String input3 = keyboard.nextLine();
-        int answer = 0;
+        double answer = 0;
         if (input3.equals("add") || input3.equals("a")) {
             answer = input1 + input2;
         } else if (input3.equals("subtract") || input3.equals("s")) {
