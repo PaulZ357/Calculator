@@ -13,24 +13,26 @@ public class Calculator {
         System.out.print("Do you want to add, subtract, multiply, or divide? ");
         String input3 = keyboard.nextLine();
         double answer = 0;
-        boolean divide = false;
-        try {
-            if (input3.equals("add") || input3.equals("a")) {
-                answer = input1 + input2;
-            } else if (input3.equals("subtract") || input3.equals("s")) {
-                answer = input1 - input2;
-            } else if (input3.equals("multiply") || input3.equals("m")) {
-                answer = input1 * input2;
-            } else if (input3.equals("divide") || input3.equals("d")) {
-                divide = true;
-                answer = input1 / input2;
-            }
+        if (input3.equals("add") || input3.equals("a")) {
+            // addition
+            answer = input1 + input2;
             System.out.println("answer: " + answer);
-        } catch (ArithmeticException e) {
-            if (divide) {
-                System.out.println("Cannot divide by 0");
-            } else {
-                e.printStackTrace();
+        } else if (input3.equals("subtract") || input3.equals("s")) {
+            // subtraction
+            answer = input1 - input2;
+            System.out.println("answer: " + answer);
+        } else if (input3.equals("multiply") || input3.equals("m")) {
+            // multiplication
+            answer = input1 * input2;
+            System.out.println("answer: " + answer);
+        } else if (input3.equals("divide") || input3.equals("d")) {
+            // division
+            if (input2 == 0)
+                // prints out error message
+                System.out.println("Error: Divide by Zero");
+            else {
+                answer = input1 / input2;
+                System.out.println("answer: " + answer);
             }
         }
         keyboard.close();
